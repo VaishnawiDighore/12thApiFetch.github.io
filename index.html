@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <title>Fetch API Data</title>
+    <style>
+      body {
+          text-align: center;
+        display: flex;
+        background-color: rgb(44, 20, 6);
+      }
+      body:hover{
+          background:  rgb(14, 160, 223);
+          padding: 50px;
+          margin:30px;
+      }
+      p,h2:hover{
+          color: rgb(64, 34, 6);
+      }
+      img {
+        width: 300px;
+        height: 400px;
+      }
+      tr {
+        border: 2px solid red;
+        padding: 20px;
+        text-align: center;
+        color: aqua;
+      }
+      button {
+          
+        display: flex;
+        margin: 5px;
+        padding: 10px;
+        border-radius: 5px;
+      }
+      button:hover{
+          background-color:chartreuse;
+          width: 120px;
+          height: 50px
+
+          
+          
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <tbody>
+        <tr>
+          <h2>Fetch Data From Api</h2>
+        </tr>
+        <tr>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam
+            amet quidem ipsa impedit, accusamus deserunt repellat necessitatibus
+            modi quos mollitia quia cum ducimus id magnam vel cumque fuga
+            obcaecati deleniti aperiam neque cupiditate? Nobis est ratione
+            tenetur nesciunt odio ab corporis aperiam aut id quia culpa nisi
+            sapiente doloribus esse, error harum natus, maiores nostrum? Quae
+            numquam cum est, fugiat a inventore excepturi! Exercitationem, iusto
+            tempore. Natus perferendis, magni quod porro ducimus optio
+            temporibus cupiditate omnis sint unde sequi quidem adipisci,
+            repellendus ratione rerum placeat? Consequatur a tenetur numquam
+            veritatis tempore magnam commodi reprehenderit sequi error! Nemo,
+            cumque voluptatum. Fugit?
+          </p>
+
+        </tr>
+        <tr>
+          <img src="" id="img" alt />
+        </tr>
+        <tr>
+          <button>Click Here to Fetch</button>
+        </tr>
+      </tbody>
+    </div>
+
+    <script>
+      let a = fetch("https://meme-api.herokuapp.com/gimme");
+      let b = a.then(function (response) {
+        return response.json();
+      });
+
+      b.then(function (data) {
+        document.getElementById("img").src = data.preview[0];
+        fn(data);
+      });
+
+     
+    </script>
+  </body>
+</html>
